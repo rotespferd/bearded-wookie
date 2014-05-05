@@ -1,0 +1,36 @@
+{
+  "name": "bearded-wookie",
+  "version": "0.0.0",
+  "description": "A tool to plan resources at you team.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SpareRips-Productions/bearded-wookie"
+  },
+  "author": "SpareRips-Productions",
+  "contributors": [
+    {
+      "name": "Marian Sievers",
+      "email": "info@mariansievers.de"
+    },
+    {
+      "name": "Thomas Hampe",
+      "email": "info@hampe.co"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SpareRips-Productions/bearded-wookie/issues"
+  },
+  "homepage": "https://github.com/SpareRips-Productions/bearded-wookie",
+  "engines": {
+    "node": ">=0.10"
+  },
+  "dependencies": {
+    "koa": ">=0.x",
+    "koa-router": ">=3.x"
+}
+}
