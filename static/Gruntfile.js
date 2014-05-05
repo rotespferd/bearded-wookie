@@ -8,16 +8,16 @@ module.exports = function(grunt) {
             main: {
                 files: [
                     // includes files within path
-                    {expand: true, src: ['app/html/*'], dest: 'dest/html/', filter: 'isFile', flatten: true},
+                    {expand: true, src: ['app/html/*'], dest: 'dist/html/', filter: 'isFile', flatten: true},
 
                     // includes files within path and its sub-directories
-                    {expand: true, src: ['res/**'], dest: 'dest', cwd: 'app', flatten: false}
+                    {expand: true, src: ['res/**'], dest: 'dist', cwd: 'app', flatten: false}
                 ]
             },
             bower: {
                 files: [
                     // includes files within path and its sub-directories
-                    {expand: true, src: ['bower_components/**'], dest: 'dest/'}
+                    {expand: true, src: ['bower_components/**'], dest: 'dist/'}
                 ]
             }
         },
@@ -26,8 +26,8 @@ module.exports = function(grunt) {
                 separator: ';'
             },
             dist: {
-                src: ['dest/js/**/*.js'],
-                dest: 'dest/js/app.js'
+                src: ['dist/js/**/*.js'],
+                dest: 'dist/js/app.js'
             }
         },
         bowerInstall: {
@@ -59,7 +59,7 @@ module.exports = function(grunt) {
             server: {
                 options: {
                     port: 8008,
-                    base: './dest',
+                    base: './dist',
                     livereload: true
                 }
             }
@@ -75,12 +75,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task(s).
-    grunt.registerTask('default', ['copy', 'copy:bower', 'bowerInstall', 'compile']);
+    grunt.registerTask('default', ['copy', 'copy:bower', 'bowerInstall']);
 
     // build and run server
     grunt.registerTask('server', ['default', 'connect', 'watch']);
-
-    // task for all the compiling
-    grunt.registerTask('compile', ['typescript']);
 
 };
