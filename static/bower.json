@@ -1,0 +1,9 @@
+{
+  "name": "bearded-wookie",
+  "version": "0.1.0",
+  "dependencies": {
+    "angular-latest": "1.2.16",
+    "angular-ui-bootstrap": "0.11.0",
+    "jquery": "2.1.1"
+  }
+}
