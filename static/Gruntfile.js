@@ -10,7 +10,7 @@ module.exports = function(grunt) {
                     // includes files within path
                     {expand: true, src: ['app/html/*'], dest: 'dist/html/', filter: 'isFile', flatten: true},
 
-                    {expand: true, src: ['app/js/*'], dest: 'dist/js/', filter: 'isFile', flatten: true},
+                    //{expand: true, src: ['app/js/*'], dest: 'dist/js/', filter: 'isFile', flatten: true},
 
                     // includes files within path and its sub-directories
                     {expand: true, src: ['res/**'], dest: 'dist', cwd: 'app', flatten: false}
@@ -28,9 +28,12 @@ module.exports = function(grunt) {
                 separator: ';'
             },
             dist: {
-                src: ['dist/js/**/*.js'],
-                dest: 'dist/js/app.js'
+                src: ['app/js/**/*.js'],
+                dest: 'dist/js/main.js'
             }
+        },
+        jshint: {
+            all: ['Gruntfile.js', 'app/js/**/*.js']
         },
         bowerInstall: {
             target: {
@@ -69,6 +72,7 @@ module.exports = function(grunt) {
     });
 
     // register plugins
+    grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-bower-install');
@@ -77,7 +81,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task(s).
-    grunt.registerTask('default', ['copy', 'copy:bower', 'bowerInstall']);
+    grunt.registerTask('default', ['jshint', 'copy', 'copy:bower', 'bowerInstall', 'concat']);
 
     // build and run server
     grunt.registerTask('server', ['default', 'connect', 'watch']);
