@@ -44,16 +44,28 @@
             <div class="row">
                 <div class="col-md-6" ng-controller="ProjectListCtrl">
                     <h2>Projekte</h2>
+                    <div>
+                        Es gibt momentan {{projects.length}} Projekte.
+                    </div>
+                    <div>
+                        <input ng-model="query">
+                    </div>
                     <ul>
-                        <li ng-repeat="project in projects">
+                        <li ng-repeat="project in projects | filter:query">
                             {{project.name}}
                         </li>
                     </ul>
                 </div>
                 <div class="col-md-6" ng-controller="RessourcenListCtrl">
                     <h2>Ressourcen</h2>
+                    <div>
+                        Es gibt momentan {{ressources.length}} Ressourcen.
+                    </div>
+                    <div>
+                        <input ng-model="query">
+                    </div>
                     <ul>
-                        <li ng-repeat="ressource in ressources">
+                        <li ng-repeat="ressource in ressources | filter:query">
                             {{ressource.name}} ({{ressource.project}})
                         </li>
                     </ul>
