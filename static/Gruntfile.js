@@ -10,6 +10,8 @@ module.exports = function(grunt) {
                     // includes files within path
                     {expand: true, src: ['app/html/*'], dest: 'dist/html/', filter: 'isFile', flatten: true},
 
+                    {expand: true, src: ['app/js/*'], dest: 'dist/js/', filter: 'isFile', flatten: true},
+
                     // includes files within path and its sub-directories
                     {expand: true, src: ['res/**'], dest: 'dist', cwd: 'app', flatten: false}
                 ]
