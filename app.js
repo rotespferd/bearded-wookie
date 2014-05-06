@@ -7,6 +7,7 @@
   render  = require('koa-ejs');
   path    = require('path');
 
+  app = koa();
 
   //template locals
   var locals = {
@@ -23,7 +24,6 @@
     }
   };
 
-  app = koa();
   render(app, {
     root: path.join(__dirname, 'template'),
     layout: 'root',
@@ -35,27 +35,16 @@
   });
 
   app.use(router(app));
+
+  /* Routing */
+
+  //constollers
+  var indexController = require('./lib/controllers/index.js');
   //static files
   app.use(serve(__dirname + '/static'));
-
-  app.listen(3000);
-
-  app.get('/', function *(next){
-    yield this.render('index', {});
-  });
-
-  app.get('/partials/*', function *(next) {
-      var stripped = this.req.url.split('.')[0];
-      var requestedView = path.join('./', stripped);
-      try {
-        yield this.render(requestedView, {layout: "partials/root"});
-      }catch(e) {
-        this.status = 404;
-        this.body = 404; 
-      }
-      
-
-  });
+  app.get('/', indexController.index);
+  app.get('/partials/*', indexController.partials);
   
+  app.listen(3000);
 
 }).call(this);
