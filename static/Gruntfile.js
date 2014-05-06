@@ -47,11 +47,11 @@ module.exports = function(grunt) {
                 tasks: ['compile']
             },
             copy: {
-                files: ['app/html/*.html'],
+                files: ['app/html/*.html', 'app/js/{,*/}*.js'],
                 tasks: ['copy']
             },
             livereload: {
-                files: ['app/html/*.html', 'app/less/{,*/}*.less'],
+                files: ['app/html/*.html', 'app/less/{,*/}*.less', 'app/js/{,*/}*.js'],
                 options: {
                     livereload: true
                 }
