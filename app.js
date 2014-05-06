@@ -44,7 +44,7 @@
   app.use(serve(__dirname + '/static'));
   app.get('/', indexController.index);
   app.get('/partials/*', indexController.partials);
-  
+
   app.listen(3000);
 
 }).call(this);

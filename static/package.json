@@ -1,8 +1,8 @@
 {
   "name": "bearded-wookie",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "A tool to plan resources at you team.",
-  "start": "app.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -29,11 +29,15 @@
   "engines": {
     "node": ">=0.10"
   },
-  "dependencies": {
-    "koa": ">=0.x",
-    "koa-router": ">=3.x",
-    "koa-router": ">=3.x",
-    "koa-static": ">=1.4.5",
-    "koa-ejs": ">=1.0.1"
+"devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-contrib-jshint": "~0.6.3",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-bower-install": "^1.4.0",
+    "grunt-contrib-connect": "^0.7.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-concat": "^0.4.0"
   }
 }
