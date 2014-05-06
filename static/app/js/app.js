@@ -1,3 +1,3 @@
 jQuery(document).ready(function() {
-    console.log("Test");
+    console.log("Welcome to the Ressource-Planning-App!");
 });
