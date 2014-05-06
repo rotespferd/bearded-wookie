@@ -50,8 +50,12 @@ module.exports = function(grunt) {
                 tasks: ['compile']
             },
             copy: {
-                files: ['app/html/*.html', 'app/js/{,*/}*.js'],
+                files: ['app/html/*.html'],
                 tasks: ['copy']
+            },
+            javascript: {
+                files: ['app/js/{,*/}*.js'],
+                tasks: ['javascript']
             },
             livereload: {
                 files: ['app/html/*.html', 'app/less/{,*/}*.less', 'app/js/{,*/}*.js'],
@@ -82,6 +86,9 @@ module.exports = function(grunt) {
 
     // Default task(s).
     grunt.registerTask('default', ['jshint', 'copy', 'copy:bower', 'bowerInstall', 'concat']);
+
+    // build and run server
+    grunt.registerTask('javascript', ['jshint', 'concat']);
 
     // build and run server
     grunt.registerTask('server', ['default', 'connect', 'watch']);
