@@ -2,7 +2,7 @@
   "name": "bearded-wookie",
   "version": "0.0.1",
   "description": "A tool to plan resources at you team.",
-  "main": "app.js",
+  "start": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
