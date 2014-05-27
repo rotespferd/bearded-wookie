@@ -1,8 +1,8 @@
 {
   "name": "bearded-wookie",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A tool to plan resources at you team.",
-  "main": "app.js",
+  "start": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -31,6 +31,9 @@
   },
   "dependencies": {
     "koa": ">=0.x",
-    "koa-router": ">=3.x"
-}
+    "koa-router": ">=3.x",
+    "koa-router": ">=3.x",
+    "koa-static": ">=1.4.5",
+    "koa-ejs": ">=1.0.1"
+  }
 }

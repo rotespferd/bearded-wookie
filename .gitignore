@@ -18,3 +18,5 @@ static/bower_components
 static/dist/*
 
 .idea
+bearded-wookie.sublime-workspace
+bearded-wookie.sublime-project
